@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject PlayerPrehub;
+
     public float playerSpeed = 10f; // プレイヤーの移動速度
 
     void Update()
@@ -16,12 +19,12 @@ public class Player : MonoBehaviour
             transform.position += new Vector3(-playerSpeed * Time.deltaTime, 0, 0);
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.D))
         {
             transform.position += new Vector3(playerSpeed* Time.deltaTime, 0, 0);
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.A))
         {
             transform.position += new Vector3(-playerSpeed * Time.deltaTime, 0, 0);
         }
