@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject PlayerPrehub;
+    [SerializeField]private GameObject PlayerPrehub;
 
     public float playerSpeed = 10f; // プレイヤーの移動速度
 

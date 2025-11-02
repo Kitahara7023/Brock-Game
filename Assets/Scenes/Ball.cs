@@ -1,26 +1,35 @@
 using UnityEngine;
 
-
-
 public class Ball : MonoBehaviour
 {
-    //[SerializeField] private GameObject ballPrefab;
+
     [SerializeField] private float speed = 5f;
     private Rigidbody2D myRigidbody;
+    private bool hasLaunched = false;
 
     void Awake()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
     }
 
-    public void Initialize(Vector2 startPosition)
+    void Update()
     {
-        transform.position = startPosition; // バーの上に配置
-
-        if (myRigidbody != null)
+        // スペースキーを押したら一度だけ Initialize で発射
+        if (Input.GetKeyDown(KeyCode.Space) && !hasLaunched)
         {
-            // 上方向に飛ばす（ブロック崩しらしい動き）
-            myRigidbody.linearVelocity = Vector2.up * speed;
+            Initialize();
+        }
+    }
+
+    public void Initialize()
+    {
+        hasLaunched = true;
+
+        if(myRigidbody != null)
+        {
+            // ランダムな角度で上方向に飛ばす
+            Vector2 direction = (Vector2.up + new Vector2(Random.Range(-0.3f, 0.3f), 0)).normalized;
+            myRigidbody.linearVelocity = direction * speed;
         }
     }
 }
