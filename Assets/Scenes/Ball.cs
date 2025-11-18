@@ -2,27 +2,18 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-
-    [SerializeField] private float speed = 5f;
-    private Rigidbody2D myRigidbody;
+    
+    private float speed;
+    
     private bool hasLaunched = false;
-    private Vector2 direction;
+    private Vector3 direction;
 
-    void Awake()
-    {
-        myRigidbody = GetComponent<Rigidbody2D>();
-
-        myRigidbody.gravityScale = 0f;
-        myRigidbody.linearDamping = 0f;
-        myRigidbody.angularDamping = 0f;
-    }
 
     void Update()
     {
-       
         if (Input.GetKeyDown(KeyCode.Space) && !hasLaunched)
         {
-            Initialize();
+            
         }
     }
 
@@ -30,10 +21,22 @@ public class Ball : MonoBehaviour
     {
         if (hasLaunched)
         {
-            myRigidbody.linearVelocity = direction * speed;
+            
         }
     }
-    
+
+    public void OnStart()
+    {
+        Debug.Log("OnStart");
+        direction = new Vector2(1,1);
+        speed = 3;
+    }
+
+    public void OnUpdate()
+    {
+        Debug.Log("OnUpdate");
+        transform.position += direction.normalized * speed * Time.deltaTime;
+    }
 
     public void Initialize()
     {
@@ -41,8 +44,6 @@ public class Ball : MonoBehaviour
 
         direction = (Vector2.up + new Vector2(Random.Range(-0.3f, 0.3f), 0)).normalized;
 
-        myRigidbody.linearVelocity = direction * speed;
-       
     }
 
     void OnCollisionEnter2D(Collision2D collision)
