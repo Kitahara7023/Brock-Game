@@ -1,14 +1,14 @@
+using System.Drawing;
 using UnityEngine;
+using static NewRect;
 
 public class Ball : MonoBehaviour
 {
-    
     private float speed;
-    
     private bool hasLaunched = false;
     private Vector3 direction;
 
-
+    public MyRect Rect;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && !hasLaunched)
@@ -30,12 +30,15 @@ public class Ball : MonoBehaviour
         Debug.Log("OnStart");
         direction = new Vector2(1,1);
         speed = 3;
+
+        Rect = new MyRect(transform.position, new Vector2(x:0.5f, y:0.5f));
     }
 
     public void OnUpdate()
     {
-        Debug.Log("OnUpdate");
         transform.position += direction.normalized * speed * Time.deltaTime;
+        Debug.Log("OnUpdate");
+        Rect.SetPosition(transform.position);
     }
 
     public void Initialize()
@@ -44,6 +47,13 @@ public class Ball : MonoBehaviour
 
         direction = (Vector2.up + new Vector2(Random.Range(-0.3f, 0.3f), 0)).normalized;
 
+    }
+
+    private void Initialized()
+    {
+        hasLaunched = true;
+
+        direction = (Vector2.up + new Vector2(Random.Range(-0.3f, 0.3f), 0f));
     }
 
     void OnCollisionEnter2D(Collision2D collision)

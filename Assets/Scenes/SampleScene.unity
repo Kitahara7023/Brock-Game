@@ -231,6 +231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 186041067}
   - component: {fileID: 186041069}
+  - component: {fileID: 186041071}
   - component: {fileID: 186041070}
   - component: {fileID: 186041068}
   m_Layer: 0
@@ -249,8 +250,8 @@ Transform:
   m_GameObject: {fileID: 186041066}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.3, y: -0.5, z: 0}
-  m_LocalScale: {x: 23.613853, y: 0.038458254, z: 1}
+  m_LocalPosition: {x: 9, y: -0.5, z: 0}
+  m_LocalScale: {x: 19, y: 0.030000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1613868891}
@@ -370,6 +371,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverText: {fileID: 267493866}
   fadeDuration: 2
+--- !u!114 &186041071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186041066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7700e3184fda0654d94ccb3164721db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: {x: 19, y: 0.03}
 --- !u!1 &267493866
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,6 +682,7 @@ GameObject:
   m_Component:
   - component: {fileID: 547478871}
   - component: {fileID: 547478873}
+  - component: {fileID: 547478874}
   - component: {fileID: 547478872}
   m_Layer: 0
   m_Name: Wall right
@@ -685,8 +700,8 @@ Transform:
   m_GameObject: {fileID: 547478870}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.5, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1, z: 1}
+  m_LocalPosition: {x: 18, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1613868891}
@@ -792,6 +807,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &547478874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547478870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7700e3184fda0654d94ccb3164721db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: {x: 1, y: 1}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,6 +914,7 @@ GameObject:
   m_Component:
   - component: {fileID: 954187601}
   - component: {fileID: 954187603}
+  - component: {fileID: 954187604}
   - component: {fileID: 954187602}
   m_Layer: 0
   m_Name: Wall Up
@@ -903,8 +932,8 @@ Transform:
   m_GameObject: {fileID: 954187600}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.3, y: 0.5, z: 0}
-  m_LocalScale: {x: 23.610495, y: 0.0332187, z: 1}
+  m_LocalPosition: {x: 9, y: 0.5, z: 0}
+  m_LocalScale: {x: 19, y: 0.030000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1613868891}
@@ -1010,6 +1039,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &954187604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954187600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7700e3184fda0654d94ccb3164721db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: {x: 19, y: 0.03}
 --- !u!1 &1246693336
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,6 +1162,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Ballprehub: {fileID: 7969317925750692268, guid: 1430186a56842ba4492c38533784a02d, type: 3}
   Blockprehub: {fileID: 6314060972047355702, guid: b586d57ac15bc3f498b1dbdc8fcb1f95, type: 3}
+  Walls:
+  - {fileID: 186041071}
+  - {fileID: 1613868892}
+  - {fileID: 547478874}
+  - {fileID: 954187604}
 --- !u!4 &1473427643
 Transform:
   m_ObjectHideFlags: 0
@@ -1145,6 +1192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1613868891}
   - component: {fileID: 1613868890}
+  - component: {fileID: 1613868892}
   - component: {fileID: 1613868889}
   m_Layer: 0
   m_Name: Wall left
@@ -1264,7 +1312,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.7, y: 0, z: 0}
-  m_LocalScale: {x: 0.2422779, y: 10.031897, z: 1}
+  m_LocalScale: {x: 0.3, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 547478871}
@@ -1272,6 +1320,19 @@ Transform:
   - {fileID: 186041067}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1613868892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613868888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7700e3184fda0654d94ccb3164721db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: {x: 0.3, y: 10}
 --- !u!1 &1878979358
 GameObject:
   m_ObjectHideFlags: 0

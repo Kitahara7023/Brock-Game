@@ -7,9 +7,11 @@ public class Stage : MonoBehaviour
     [SerializeField] GameObject Ballprehub;
     [SerializeField] GameObject Blockprehub;
 
+    [SerializeField] private List<Wall> walls;
+
     private Ball _ball;
     private Block _block;
-    private List<Block> _blocks = new List<Block>();
+    private readonly List<Block> _blocks = new();
 
     void Start()
     {
@@ -44,5 +46,14 @@ public class Stage : MonoBehaviour
     void Update()
     {
         _ball.OnUpdate();
+
+        foreach (var wall in walls)
+        {
+            if (_ball.Rect.Intersects(wall.Rect))
+            {
+                Debug.Log("Ball hit Wall");
+                _ball.OnHitWall();
+            }
+        }
     }
 }
